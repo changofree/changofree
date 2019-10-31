@@ -1,253 +1,119 @@
-<app-navbar></app-navbar>
 <header class="bg-head">
-    <div class="rombo"></div>
-  <div class="container text-white pt-5">
-    <div class="row pt-1">
-      <div class="col-12 col-md-6 col-xs-12">
-          <h1><b class="title">¡Creá tu tienda online!</b></h1>
-          <!-- <h4 class="descripcion">Chango Free es una plataforma adaptable a cualquier dispositivo para facilitar y agilizar las ventas de tu negocio. </h4> -->
-          <h4 class="descripcion">Registrate ahora y disfrutá 15 diás gratis de tu carrito de compras. Gracias a ChangoFree vas a realizar ventas por internet y administrar todos tus productos.</h4>
-        <div class="text-center">
-          <img class="venta-height" src="assets/venta.png" alt="ventas">
-        </div>
-        </div>
-          <div class="col-md-5 offset-md-1 col-xs-12 lp col-12">
-            <h1 class="text-center"> Vender por internet nunca fue tan fácil</h1>
-            <form>
-            <mat-form-field class="max-width">
-                <input matInput type="email" placeholder="Email" name="email" [(ngModel)]="clientObject.email">
-            </mat-form-field>
-            <mat-form-field class="max-width">
-                <input matInput type="text" placeholder="Tu nombre" name="name" [(ngModel)]="clientObject.name">
-            </mat-form-field>
-            <mat-form-field class="max-width">
-                <input matInput type="text" placeholder="Nombre de tu marca" name="marca" [(ngModel)]="clientObject.marca">
-            </mat-form-field>
-            <mat-form-field class="max-width">
-                <input matInput type="password" placeholder="Contraseña para tu web" name="password" [(ngModel)]="clientObject.password">
-            </mat-form-field>
-            </form>
-            <small class="mb-2 text-info">
-            Al registrarte estas aceptando nuestros <a routerLink="/terminos">términos y condiciones</a>
-            </small>
-            <button mat-raised-button class="max-width btn-crear-tienda mt-4" color="primary" (click)="ValidateForm()">¡Crear tienda gratis ya!</button>
+    <div class="navbar_top">
+        <div class="container">
+            <div class="row">
 
-          </div>
+
+                <div class="col-12 d-flex">
+                    <h3 class="text-white ">Beta Extra</h3>
+                    <button class="ml-auto btn-secondary">Iniciar sesión</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="container container-mobile h100">
+
+        <div class="row h100">
+            <div class="col-12 col-md-7 d-flex h100">
+                <div class="my-auto">
+
+
+                    <h1 class="text-white text-center-xs">Aumentá tus ventas por internet</h1>
+                    <p class="text-white h5 text-center-xs mt-3"> Somos una companía de marketing que no solo te brindaremos la posibiladad de crear una tienda online en cuestión de segundos, también potenciales clientes.</p>
+                    <p class="mt-5 text-center-xs">
+                        <button class="btn-primary">
+                            CREAR MI TIENDA ONLINE
+                            <i class="material-icons">arrow_right</i>
+                        </button>
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 h100 d-flex">
+                <div class="my-auto">
+                    <img src="/assets/lapto.png" alt="chango free" style="width: 100%;" class="my-4 py-4">
+                </div>
+            </div>
+        </div>
+    </div>
+
 </header>
-<section class="bg-white pt-5">
-  <div class="container" style="z-index: 3; position: relative">
-    <h4><b>Digitalizá tus productos y potencia tus ventas sin limitaciones</b></h4>
-    <p>Te ofrecemos la facilidad de crear un ecommerce profesional en cuestión de segundos y con planes económicos.<br>
-    También trabajamos en asesoria en Marketing, redes sociales, Addwords, Mercadolibre, entre otros.</p>
-<div class="row mt-5">
-  <div class="col-md-4">
-    <div class="card-container">
-        <div class="card">
-            <div class="front">
-                <div class="cover">
-                    <img src="assets/tienda.png" alt="tienda"/>
-                </div>
-               
-                <div class="content">
-                    <div class="main">
-                        <h3 class="name">Crea tu tienda online</h3>
-                        <p class="profession">Aprovechá la oportunidad y diferenciate a tu competencia.</p>
-                    </div>
-                    <div class="footer">
-                        <i class="fa fa-mail-forward"></i> Sabes más
-                    </div>
-                </div>
-            </div> <!-- end front panel -->
-            <div class="back">
-                <div class="header">
-                    <h5 class="motto">"Adaptarse a los cambios."</h5>
-                </div>
-                <div class="content">
-                    <div class="main">
-                        <h4 class="text-center">Rápido y sencillo</h4>
-                        <p class="text-center">Podés crear tu tienda online en segundos, te damos la libertad de subir tus productos cualquier dispositvo que tengas cerca.<p>
-    
-                        
-    
-                    </div>
-                </div>
-              
-            </div> <!-- end back panel -->
-        </div> <!-- end card -->
-    </div> <!-- end card-container -->
-
-  </div>
-  <div class="col-md-4">
-      <div class="card-container">
-          <div class="card">
-              <div class="front">
-                  <div class="cover">
-                      <img src="assets/gestion.png" alt="gestion"/>
-                  </div>
-           
-                  <div class="content">
-                      <div class="main">
-                          <h3 class="name">Administrá tu tienda</h3>
-                          <p class="profession">Revisá los pedidos pendientes, el tráfico de la web y administrá tus anuncions</p>
-                      </div>
-                      <div class="footer">
-                          <i class="fa fa-mail-forward"></i> Saber más
-                      </div>
-                  </div>
-              </div> <!-- end front panel -->
-              <div class="back">
-                  <div class="header">
-                      <h5 class="motto">"La administración es la eficiencia en escalar la ladera del éxito"</h5>
-                  </div>
-                  <div class="content">
-                      <div class="main">
-                          <h4 class="text-center">Análisis y desarrollo</h4>
-                          <p class="text-center">Te ofrecemos la herramienta magnifica de saber cuantas visitas recibe tu web, admnistrar tus productos y anuncios. </p>
-      
-                      
-                      </div>
-                  </div>
-                  
-              </div> <!-- end back panel -->
-          </div> <!-- end card -->
-      </div> <!-- end card-container -->
-  </div>
-  <div class="col-md-4">
-      <div class="card-container">
-          <div class="card">
-              <div class="front">
-                  <div class="cover">
-                      <img src="assets/plata.png" alt="imgpla"/>
-                  </div>
-              
-                  <div class="content">
-                      <div class="main">
-                          <h3 class="name">Alcanzá tu objetivo</h3>
-                          <p class="profession">Simplemente disfrutá los resultados dados por ChongoFree</p>
-                      </div>
-                      <div class="footer">
-                          <i class="fa fa-mail-forward"></i> Saber más
-                      </div>
-                  </div>
-              </div> <!-- end front panel -->
-              <div class="back">
-                  <div class="header">
-                      <h5 class="motto">"Nunca negocies el precio, negocia el valor que recibirá el cliente"</h5>
-                  </div>
-                  <div class="content">
-                      <div class="main">
-                          <h4 class="text-center">Mirá las estadisticas y empezá a disfrutar las ventas cerradas </h4>
-                          <p class="text-center">¡A trabajar!</p>
-      
-      
-                      </div>
-                  </div>
-              </div> <!-- end back panel -->
-          </div> <!-- end card -->
-      </div> <!-- end card-container -->
-  </div>
-</div>
-</div>
-
-  
-
-</section>
-<section class="bg-blue py-5">
-<div class="inrombo"></div>
-<div class="inrombo-two"></div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-12 text-center ">
-      <h2 class="text-white">Última tecnología en desarrollo web</h2>
-      <h5 class="text-white">Desarrollamos todas las plataformas con las tecnologias más demandadas en la actualidad. Garantía de un desempeño profesional, y una velocidad inigualable.</h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 text-center">
-      <img src="assets/angular.png" style="max-height:225px;" alt="angular">
-    </div>
-    <div class="col-12 text-center">
-        <h6 class="text-white">Las plataformas estan desarrolladas en Angular6, AngularMaterial, Bootstrap4, Typescript, AngularFire, FireStorage. Su velocidad es incomparable</h6>
-    </div>
-</div>
-</div>
-
-</section>
-<section class="bg-head py-5" style="height:auto!important">
-<div class="circulo"><i class="material-icons pos">message</i></div>
-    <div class="container py-5">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="title" style="margin-bottom: 15px;">Plan inicial de $300/mes</h2>
-            <h5>Vas a poder realizar ventas, administrar tus productos y tener una pagina web profesional.</h5>
-            <h6><small> * Plan económico y recomendado. </small></h6>
-            <button  mat-raised-button color="primary" class="mt-2 btn-crear-tienda" style="font-size:18px" data-toggle="modal" data-target="#registroModal"><b class="text-white">¡Crear mi tienda ahora!</b></button>
-        </div>
-    </div>
-</div>
-</section>
-<section class="bg-white py-5">
-    <div class="container py-2">
+<section class="ofrecer">
+    <div class="triangulo"></div>
+    <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h2 class="barra-abajo"><b>Preguntas frecuentes</b></h2>
+            <div class="col-12 py-3 text-center-xs">
+                <h3>¿Qué me ofrece ChangoFree?</h3>
             </div>
         </div>
-        <div class="row pt-3">
-                <div class="col-12 max-width">    
-                    <h4>¿Qué es ChangoFree? ¿Por qué es una herramienta fundamental para mi negocio?</h4>
-                    <p><b>ChangoFree</b> es una aplicación web desarrollada con tecnología de alto nivel. Es un creador de <b>carritos de compras</b> para facilitar las <b>ventas</b> y automatizar los procesos de las mismas. Con ChangoFree podes ofrecer <b>seguiridad y garantia</b> a tus clientes y darle la satisfación de realizar una compra desde el sillón de su casa.</p>
+        <div class="row mt-3">
+            <div class="col-12 col-md-4 d-flex ">
+                <div class="mx-auto">
+                    <p class="text-center">
+                        <img src="/assets/responsive.png" alt="Obtener tráfico por ChangoFree" style="width:100px">
+                    </p>
+                    <p class="text-center"><b>Visitas diarias a tu tienda</b><br> sin que tengás que hacer nada.</p>
                 </div>
-            <div class="col-12 max-width mt-3">    
-                <h4>¿ChangoFree cobra comisión por cada venta que hago?</h4>
-                <p>ChangoFree cobra $0.50 pesos argentinos por cada venta, ese dinero esta enfocado al mantenimiento de la base de datos y hosting mensual.</p>
             </div>
-            <div class="col-12 max-width mt-3">    
-                <h4>¿Que pasarela de pago usa ChangoFree?</h4>
-                <p>Usamos la pasarela de pago de MercadoPago. Para poder usar ChangoFree es necesario tener una cuenta de MercadoPago. Ellos cobran un 4.5% por cada venta realizada. </p>
-            </div>
-            <div class="col-12 text-foot max-width mt-5 text-center">    
-                    <h2><b class="text-white t-sha">ChangoFree es la solución digital que estas buscando, creá tu tienda ahora y marcá una diferencia</b> </h2>
-                <button mat-raised-button  class="btn-crear-tienda-foot mt-4" color="primary" data-toggle="modal" data-target="#registroModal">¡Crear tienda gratis ya!</button>
-              
+            <div class="col-12 col-md-4 d-flex ">
+                <div class="mx-auto">
+                    <p class="text-center">
+                        <img src="/assets/credit-card.png" alt="Obtener tráfico por ChangoFree" style="width:100px">
+                    </p>
+                    <p class="text-center"><b>Variedad de forma de pagos y envios</b><br> todos los medios de pago y envios en un mismo lugar.</p>
                 </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex ">
+                <div class="mx-auto">
+                    <p class="text-center">
+                        <img src="/assets/support.png" alt="Obtener tráfico por ChangoFree" style="width:100px">
+                    </p>
+                    <p class="text-center"><b>Soporte y cursos</b><br> para que te ayudemos a seguir creciendo cada día.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="triangulo_down"></div>
+
+</section>
+<section class="call_to_action">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="h1">La <b>mejor plataforma</b> para vender online</h2>
+                <p>Vos te ocupas de tus productos y nosotros de potenciar tus ventas.</p>
+            </div>
+        </div>
+        <div class="row mt-4 ">
+            <div class="col-12 d-flex">
+
+                <img src="/assets/login.png" style="width:70px;height: 70px;" class="my-auto">
+                <p class="p-inline my-auto"><b>Primero</b> creá tu tienda. Si ya estabas vendiendo en Instagram o Facebook podés usar las mismas fotos para tus productos</p>
+            </div>
+            <div class="col-12 d-flex mt-4">
+
+                <img src="/assets/contract.png" style="width:70px;height: 70px;" class="my-auto">
+                <p class="p-inline my-auto"><b>Segundo</b> personalizá tu tienda. En tu panel de control podés modificar el diseño y plantilla de tu Ecommerce. Si tenés más experiencia en Ecommerce y sabes CSS podes modificar completamente a tu gusto</p>
+            </div>
+            <div class="col-12 d-flex mt-4">
+                <img src="/assets/network.png" style="width:70px;height: 70px;" class="my-auto">
+                <p class="p-inline my-auto"><b>Tercero</b> fomentá las redes sociales. Si venias trabajando con las redes sociales, fomentalos a entrar a tu tienda, y así empezás a generar visitas y posibles ventas.
+                </p>
+
+            </div>
+            <div class="col-12 d-flex mt-4">
+                <img src="/assets/money-bag.png" style="width:70px;height: 70px;" class="my-auto">
+                <p class="p-inline my-auto"><b>Cuarto</b> disfrutá los ingresos. Si seguiste todos los pasos el resto de responsabilidad para que vendas es nuestra. Y gracias a nuestro excelente equipo de marketing vas a lograr tus objetivos.
+                </p>
+            </div>
+            <div class="col-12 mt-5 text-center">
+                <button class="btn-primary px-5">
+                            CREAR MI TIENDA ONLINE
+                        </button>
+            </div>
         </div>
     </div>
 </section>
-<app-footer></app-footer>
-<div class="modal fade" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-center" id="exampleModalLabel"><b>Chango Free</b></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <h1 class="text-center"> Vender por internet nunca fue tan facil</h1>
-                            <form>
-                            <mat-form-field class="max-width">
-                                <input matInput type="text" placeholder="Email" name="email" [(ngModel)]="clientObject.email">
-                            </mat-form-field>
-                            <mat-form-field class="max-width">
-                                <input matInput type="text" placeholder="Tu nombre" name="name" [(ngModel)]="clientObject.name">
-                            </mat-form-field>
-                            <mat-form-field class="max-width">
-                                <input matInput type="text" placeholder="Nombre de tu marca" name="marca" [(ngModel)]="clientObject.marca">
-                            </mat-form-field>
-                            <mat-form-field class="max-width">
-                                <input matInput type="password" placeholder="Contraseña para tu web" name="password" [(ngModel)]="clientObject.password">
-                            </mat-form-field>
-                            </form>
-                
-            </div>
-            <div class="modal-footer">
-                    <button mat-raised-button class="max-width btn-crear-tienda" color="primary" data-dismiss="modal" (click)="ValidateForm()">Crear tienda gratis ya!</button>
-            </div>
-          </div>
-        </div>
-      </div>
+<section class="clientes">
+
+</section>
