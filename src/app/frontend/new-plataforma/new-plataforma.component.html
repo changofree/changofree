@@ -1,4 +1,72 @@
-<section class="top">
+<header>
+    <img src="/assets/bussines.png" style="width:300px" class="ilustracion">
+    <div class="bg-right">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                </div>
+                <div class="col-12  mt-3 text-center">
+                    <a class="h2">¡Estás por crear tu tienda!</a>
+                    <br>
+                    <a>Completá los siguientes campos y tu tienda se creará en segundos</a>
+                </div>
+                <div class="col-12 mt-4 px-5">
+                    <input type="text" placeholder="¿Cuál es tu nombre?" class="w100" name="name" [(ngModel)]="clientObject.name">
+                </div>
+                <div class="col-12 mt-3 px-5">
+                    <input type="text" placeholder="Escribi tu email acá" class="w100" name="email" [(ngModel)]="clientObject.email">
+                </div>
+
+                <div class="col-12 mt-3 px-5">
+                    <input type="password" placeholder="Escribi tu contraseña acá" class="w100" name="pass" [(ngModel)]="clientObject.password">
+                </div>
+                <div class="col-12 mt-3 px-5">
+                    <input type="text" placeholder="¿Cual es el nombre de tu marca?" class="w100" name="marca" [(ngModel)]="clientObject.marca">
+                </div>
+                <div class="col-12 mt-3 px-5">
+                    <select class="w100" (change)="clientObject.rubro = $event.target.value">
+                      <option>
+                        Seleccioná tu rubro
+                      </option>
+                    <option>
+                      Zapatillas hombre
+                    </option>
+                    <option>
+                        Zapatillas mujer
+                      </option>
+                      <option>
+                          Indumentaria
+                        </option>
+                        <option>
+                          Electronica
+                        </option>
+                        <option>
+                          Deportes
+                        </option>
+                        <option>
+                          Camisas
+                        </option>
+                        <option>
+                            Ropa de verano
+                          </option>
+                          <option>
+                            Otro
+                          </option>
+                  </select>
+                </div>
+                <div class="col-12 px-5">
+                    <p><small>Al crear tu tienda estás aceptando nuestros terminos y condiciones de politica de privacidad</small></p>
+                </div>
+                <div class="col-12 px-5">
+                    <button class="w100" (click)="ValidateForm()">CREAR MI TIENDA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- <section class="top">
   <div class="container">
     <div class="row text-center">
       <div class="col-12">
@@ -38,4 +106,4 @@
     </form>
     </div>
   </div>
-</section>
+</section> -->

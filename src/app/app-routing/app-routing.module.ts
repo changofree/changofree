@@ -20,7 +20,7 @@ import { PruebaComponent } from '../prueba/prueba.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: PlataformasComponent  },
-  { path: 'creando-tienda', component: NewPlataformaComponent},
+  { path: 'crear-tienda', component: NewPlataformaComponent},
   { path: 'cliente-backend',component: BackendStandardComponent},
   { path: 'login', component: ValidateComponent},
   { path: 'backend/login', component: LoginComponent},
