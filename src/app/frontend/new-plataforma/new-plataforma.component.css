@@ -49,14 +49,24 @@ select {
     border-radius: 5px;
     box-shadow: 0px 0px 10px -5px black;
     height: calc(100vh - 30px);
+    min-height: calc(100vh - 30px);
+}
+
+.just_mobile {
+    display: none;
 }
 
 @media screen and (max-width:960px) {
+    .just_mobile {
+        display: block;
+    }
     .bg-right {
         width: 100%;
         left: 0;
+        min-height: 100vh;
         height: auto;
-        top: 10%;
+        top: 0%;
+        border-radius: 0px;
     }
     .ilustracion {
         display: none;
@@ -112,4 +122,9 @@ button {
     /* 100% {
         transform: rotate(360deg);
     } */
+}
+
+button {
+    border: 0px!important;
+    outline: none;
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { PlataformasComponent } from '../frontend/plataformas/plataformas.component';
 import { NewPlataformaComponent } from '../frontend/new-plataforma/new-plataforma.component';
 import { BackendStandardComponent } from '../backend/backend-standard/backend-standard.component';
@@ -16,26 +16,20 @@ import { MensajesComponent } from '../backend/soporte/mensajes/mensajes.componen
 import { UsuarioOnlineComponent } from '../frontend/usuario-online/usuario-online.component';
 import { TerminosComponent } from '../terminos/terminos.component';
 import { PruebaComponent } from '../prueba/prueba.component';
+import { PlanesComponent } from '../planes/planes.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: PlataformasComponent  },
-  { path: 'crear-tienda', component: NewPlataformaComponent},
-  { path: 'cliente-backend',component: BackendStandardComponent},
-  { path: 'login', component: ValidateComponent},
-  { path: 'backend/login', component: LoginComponent},
-  { path: 'terminos', component: TerminosComponent},
-  { path: 'piria', component: PruebaComponent},
-  { path: 'backend', component: SidenavComponent,
-  children: [
-      { path: '', redirectTo: 'inicio', pathMatch: 'full'},
-      { path: 'inicio', component: InicioComponent },
-      { path: 'clientes', component: ClientesComponent },
-      { path: 'notificaciones', component: NotificacionesComponent },
-      { path: 'ventas', component: VentasComponent },     
-      { path: 'soporte', component: SoporteComponent },
-      { path: 'soporte/mensajes/:key', component: MensajesComponent },      
-  ]},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: PlataformasComponent },
+  { path: 'crear-tienda', component: NewPlataformaComponent },
+  { path: 'cliente-backend', component: BackendStandardComponent },
+  { path: 'login', component: ValidateComponent },
+  { path: 'backend/login', component: LoginComponent },
+  { path: 'terminos', component: TerminosComponent },
+  {
+    path: 'planes', component: PlanesComponent
+  }
+
 ];
 
 
@@ -46,8 +40,8 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-],
+  ],
   declarations: []
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule { }

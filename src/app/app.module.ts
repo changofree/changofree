@@ -76,6 +76,7 @@ import { UsuarioOnlineComponent } from './frontend/usuario-online/usuario-online
 import { TerminosComponent } from './terminos/terminos.component';
 import { PruebaComponent } from './prueba/prueba.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PlanesComponent } from './planes/planes.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { HttpClientModule } from '@angular/common/http';
     MensajesComponent,
     UsuarioOnlineComponent,
     TerminosComponent,
-    PruebaComponent
+    PruebaComponent,
+    PlanesComponent
   ],
   imports: [
     AppRoutingModule,

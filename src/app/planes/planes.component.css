@@ -1,0 +1,228 @@
+header {
+    background-image: url('/assets/bg_modern.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 45vh;
+}
+
+.btn-primary {
+    border: none;
+    background-color: #0099ff;
+    background-image: -webkit-linear-gradient(left, #0099ff 0%, #0bddf2 50%, #0099ff 100%);
+    background-image: linear-gradient(to right, #0099ff 0%, #0bddf2 50%, #0099ff 100%);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    background-size: 200% 100%;
+    height: 50px;
+    padding: 0px 30px;
+    padding-right: 45px;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px -5px #3c3c3c;
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+}
+
+.btn-primary>i {
+    position: absolute;
+    right: 10px;
+    z-index: 9;
+    height: 24px;
+    width: 24px;
+    top: calc(50% - 12px);
+}
+
+.btn-secondary {
+    background: white;
+    border: 0;
+    color: #4c4c4c;
+    border-radius: 5px;
+    padding: 0px 20px;
+    box-shadow: 0px 0px 10px -5px #000000c2;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-secondary:focus {
+    color: #4c4c4c!important;
+    background-color: white!important;
+    box-shadow: 0px 0px 15px -5px #000000c2;
+}
+
+.text-center-xs {
+    text-align: justify;
+}
+
+.navbar_top {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    z-index: 3;
+}
+
+h1 {
+    text-shadow: 0px 0px 9px #00000033;
+}
+
+.container-mobile {
+    padding-top: auto;
+}
+
+.ofrecer {
+    background: #fcfcfc;
+    position: relative;
+}
+
+.triangulo {
+    height: 0;
+    border-right: 0px solid transparent;
+    border-left: 106px solid #fcfcfc;
+    border-bottom: 50px solid #fcfcfc;
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    border-top-left-radius: 35%;
+    border-top-right-radius: 100%;
+}
+
+.triangulo2 {
+    height: 0;
+    border-right: 0px solid transparent;
+    border-left: 106px solid #eeeeee4a;
+    border-bottom: 50px solid #eeeeee4a;
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    border-top-left-radius: 35%;
+    border-top-right-radius: 100%;
+}
+
+.triangulo_down {
+    height: 0;
+    border-right: 0px solid transparent;
+    border-left: 106px solid #fcfcfc;
+    border-bottom: 50px solid #fcfcfc;
+    position: absolute;
+    box-shadow: 9px -13px 18px -21px black;
+    bottom: -50px;
+    transform: rotate(180deg);
+    width: 100%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 100%;
+}
+
+.call_to_action {
+    padding-top: 50px;
+    background-color: #eeeeee4a;
+    position: relative;
+}
+
+.ventas {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.p-inline {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.clientes {
+    height: 300px;
+    background-image: url('/assets/bg_modern.jpg');
+}
+
+@media screen and (max-width:768px) {
+    .text-center-xs {
+        text-align: center;
+    }
+    header {
+        height: auto;
+    }
+    .container-mobile {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.btn_planes {
+    border-radius: 5px;
+    background-image: linear-gradient(45deg, white, white);
+    height: 40px;
+    width: 140px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #2a2a2a;
+}
+
+.lightbox {
+    background: #0000002b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    display: flex;
+}
+
+.bg-right {
+    width: 40%;
+    background: white;
+    z-index: 9999;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -5px black;
+}
+
+@media screen and (max-width:960px) {
+    .bg-right {
+        width: 80%;
+    }
+}
+
+input,
+select {
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    padding: 10px;
+}
+
+.login {
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(45deg, #1fb5cb, #16c5b8);
+    box-shadow: 0px 0px 10px -6px black;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+.h2 {
+    color: #043c63;
+}
+
+.items>p {
+    font-size: 13px;
+}
+
+.section_plan {
+    position: relative;
+    top: -25px;
+    background: white;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.card {
+    min-height: 450px;
+    box-shadow: 0px 0px 15px -8px #0c6cad;
+}
