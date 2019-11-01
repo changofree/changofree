@@ -14,6 +14,7 @@ export class NewPlataformaComponent implements OnInit {
   redesSociales: WebCliente;
   listClients: Cliente[];
   clientObject: Cliente;
+  isAccount: boolean;
 
   constructor(private clientService: ClienteService, private router: Router
   ) {
@@ -21,6 +22,7 @@ export class NewPlataformaComponent implements OnInit {
     this.redesSociales.whatsapp = "No disponible"
     this.redesSociales.instagram = "No disponible";
     this.redesSociales.facebook = "No disponible";
+    this.isAccount = false;
 
     this.clientObject = {}
   }
@@ -34,10 +36,12 @@ export class NewPlataformaComponent implements OnInit {
   }
 
   SendInfo() {
+    let cname = localStorage.getItem("cliente-chango");
+    document.cookie = "login=" + cname + ";path=/;domain=changofree.com;";
     this.clientService.SearchRegistForEmail(localStorage.getItem("cliente-chango"), this.listClients)
       .subscribe(data => {
         this.clientService.updateClient(this.redesSociales, data.web, data.$key);
-        // location.href = "http://tienda.changofree.com/" + data.$key;
+        location.href="http://"+this.clientObject.marca+".changofree.com";
       });
   }
 
@@ -65,6 +69,8 @@ export class NewPlataformaComponent implements OnInit {
 
     if (aux) {
       if (this.clientObject.marca !== undefined && this.clientObject.name !== undefined && this.clientObject.password !== undefined) {
+        this.isAccount = true;
+
         this.clientService.insertClient(this.clientObject);
         localStorage.setItem('cliente-chango', this.clientObject.email);
         this.clientService.sendEmail(

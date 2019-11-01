@@ -2,11 +2,9 @@
     <div class="navbar_top">
         <div class="container">
             <div class="row">
-
-
                 <div class="col-12 d-flex">
-                    <h3 class="text-white ">Beta Extra</h3>
-                    <button class="ml-auto btn-secondary">Iniciar sesión</button>
+                    <h3 class="text-white "> ChangoFree</h3>
+                    <button class="ml-auto btn-secondary" (click)="isLogin = true">Iniciar sesión</button>
                 </div>
             </div>
         </div>
@@ -42,7 +40,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 py-3 text-center-xs">
-                <h3 class="h2">¿Qué me ofrece ChangoFree?</h3>
+                <h2 class="h1">¿Qué me ofrece <b>ChangoFree</b>?</h2>
             </div>
         </div>
         <div class="row mt-3">
@@ -76,7 +74,33 @@
     <div class="triangulo_down"></div>
 
 </section>
+
+<section class="ventas">
+
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-12 text-center">
+                <h2 class="h1">¿Como potencian mis <b>ventas</b>?</h2>
+            </div>
+
+            <div class="col-12 text-center">
+                <p>
+                    Gran parte de tu plan mensual, lo invertimos en anuncios en redes sociales para generar tráfico cotidiano a tu TIENDA y a su vez posicionarla en motores de busqueda como <b>Google</b>.
+                    <br> Además, contamos con un sistema de <b>Notificaciones</b> para informar a los clientes que estan interesados en tu rubro, que sacaste una nueva oferta.
+
+                </p>
+            </div>
+            <div class="col-12 text-center">
+                <!-- <img src="/assets/it.png" style="width:175px"> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="triangulo_down"></div> -->
+
+</section>
 <section class="call_to_action">
+    <div class="triangulo2"></div>
+
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -206,3 +230,32 @@
         </div>
     </div>
 </footer>
+
+
+
+<div class="lightbox" *ngIf="isLogin">
+    <div class="bg-right">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-12 text-center">
+                </div>
+                <div class="col-12 px-5 text-center">
+                    <a class="h2">¡Inicia sesión!</a>
+                </div>
+
+                <div class="col-12 mt-3 px-5">
+                    <input type="email" placeholder="Escribi tu email acá" class="w100" name="email" [(ngModel)]="clientObject.email">
+                </div>
+                <div class="col-12 mt-3 px-5">
+                    <input type="password" placeholder="Escribí tu contraseña" class="w100" name="email" [(ngModel)]="clientObject.password">
+                </div>
+                <div class="col-12 px-5 mt-3">
+                    <button class="w100 login" (click)="ValidateForm()">INICIAR SESIÓN</button>
+                </div>
+                <div class="mt-4 text-center col-12">
+
+                    <a class="cp" (click)="isLogin = !isLogin">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </div>

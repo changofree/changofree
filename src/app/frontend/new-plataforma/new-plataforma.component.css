@@ -72,3 +72,44 @@ button {
     color: white;
     font-weight: bold;
 }
+
+.lightbox {
+    background: #0000002b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    display: flex;
+}
+
+.box {
+    background-color: white;
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    margin: auto;
+    display: flex;
+}
+
+.circle {
+    height: 60%;
+    width: 60%;
+    border-radius: 50px;
+    border-top: 3px solid #1fb5cb;
+    margin: auto;
+    animation: 3s reload infinite;
+}
+
+@keyframes reload {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(3600deg);
+    }
+    /* 100% {
+        transform: rotate(360deg);
+    } */
+}

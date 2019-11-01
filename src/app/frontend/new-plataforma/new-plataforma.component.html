@@ -14,7 +14,7 @@
                     <input type="text" placeholder="¿Cuál es tu nombre?" class="w100" name="name" [(ngModel)]="clientObject.name">
                 </div>
                 <div class="col-12 mt-3 px-5">
-                    <input type="text" placeholder="Escribi tu email acá" class="w100" name="email" [(ngModel)]="clientObject.email">
+                    <input type="email" placeholder="Escribi tu email acá" class="w100" name="email" [(ngModel)]="clientObject.email">
                 </div>
 
                 <div class="col-12 mt-3 px-5">
@@ -65,7 +65,11 @@
     </div>
 </header>
 
-
+<div class="lightbox" *ngIf="isAccount">
+    <div class="box d-flex">
+        <div class="circle"></div>
+    </div>
+</div>
 <!-- <section class="top">
   <div class="container">
     <div class="row text-center">
