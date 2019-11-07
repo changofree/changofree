@@ -47,3 +47,7 @@ b {
 .w100 {
     width: 100%;
 }
+
+button {
+    border: 0px!important;
+}

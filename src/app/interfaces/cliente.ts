@@ -11,14 +11,7 @@ export interface Cliente {
     hasta?: string;
     online?: boolean;
     rubro?: string;
-}
-export class ClienteObject {
-    $key?: string;
-    name: string;
-    email: string;
-    password: string;
-    marca: string;
-    whatsapp?: string;
-    instagram?: string;
-    facebook?: string;
+    fechaVerificacionAds?: string;
+    statusAds?: string;
+    fotoAds?: string;
 }

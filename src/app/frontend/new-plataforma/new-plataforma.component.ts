@@ -3,6 +3,7 @@ import { ClienteService } from '../../services/cliente.service';
 import { Cliente } from '../../interfaces/cliente';
 import { WebCliente } from '../../interfaces/web-cliente';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-new-plataforma',
@@ -16,7 +17,7 @@ export class NewPlataformaComponent implements OnInit {
   clientObject: Cliente;
   isAccount: boolean;
 
-  constructor(private clientService: ClienteService, private router: Router
+  constructor(private clientService: ClienteService, private router: Router, private authService: AuthService
   ) {
     this.redesSociales = {};
     this.redesSociales.whatsapp = "No disponible"
@@ -38,15 +39,16 @@ export class NewPlataformaComponent implements OnInit {
   SendInfo() {
     let cname = localStorage.getItem("cliente-chango");
     document.cookie = "login=" + cname + ";path=/;domain=changofree.com;";
+    this.authService.SignUp(this.clientObject.email, this.clientObject.password);
     this.clientService.SearchRegistForEmail(localStorage.getItem("cliente-chango"), this.listClients)
       .subscribe(data => {
         this.clientService.updateClient(this.redesSociales, data.web, data.$key);
-        location.href="http://"+this.clientObject.marca+".changofree.com";
+        location.href = "http://" + this.clientObject.marca + ".changofree.com";
       });
+
   }
 
   ValidateForm() {
-    console.log(this.clientObject)
     this.validacionHasta();
 
     let aux = true;
@@ -70,22 +72,27 @@ export class NewPlataformaComponent implements OnInit {
     if (aux) {
       if (this.clientObject.marca !== undefined && this.clientObject.name !== undefined && this.clientObject.password !== undefined) {
         this.isAccount = true;
+        const f = new Date();
+
+        this.clientObject.fechaVerificacionAds = (f.getDate() - 1) + "/" + (f.getMonth() + 1) + "/" + f.getFullYear();
+        this.clientObject.fotoAds = '';
+        this.clientObject.statusAds = 'new user';
 
         this.clientService.insertClient(this.clientObject);
         localStorage.setItem('cliente-chango', this.clientObject.email);
         this.clientService.sendEmail(
           'Gracias por registrarte - Equipo de ChangoFree',
-          '<h1>Hola ' + this.clientObject.name + 
+          '<h1>Hola ' + this.clientObject.name +
           '</h1>, <br> <p>Muchas gracias por haberte registrado en nuestra plataforma. Te recordamos que estamos a tu disposición por cualquier consula o inconveniente. Saludos! </p> ',
           this.clientObject.email
-        ).subscribe(data => { 
+        ).subscribe(data => {
           console.log(data);
         });
         setTimeout(() => {
-          this.SendInfo(); 
-        },1500);
+          this.SendInfo();
+        }, 1500);
       } else {
-        
+
         // this.openSnackBar("Por favor revisá que el formulario haya sido completado correctamente.", 'Ok, Gracias!');
       }
     }

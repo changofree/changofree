@@ -77,6 +77,7 @@ import { TerminosComponent } from './terminos/terminos.component';
 import { PruebaComponent } from './prueba/prueba.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlanesComponent } from './planes/planes.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import { PlanesComponent } from './planes/planes.component';
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
+    AngularFireAuthModule,
     MatGridListModule,
     MatIconModule,
     MatInputModule,

@@ -12,39 +12,39 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClienteService {
 
-  constructor( 
+  constructor(
     private fireBase: AngularFireDatabase,
-    private http : HttpClient
+    private http: HttpClient
   ) { }
 
   listClient: AngularFireList<Cliente>;
 
 
-  clientsWithSnap(){
+  clientsWithSnap() {
     return this.listClient = this.fireBase.list('cliente');
   }
-  
-  sendEmail(titulo, mensaje, email){
-    return this.http.get("https://changofree.com/assets/php/send-mail.php?titulo="+titulo+"&mensaje="+mensaje+"&email="+email);
+
+  sendEmail(titulo, mensaje, email) {
+    return this.http.get("https://changofree.com/assets/php/send-mail.php?titulo=" + titulo + "&mensaje=" + mensaje + "&email=" + email);
   }
 
   getListClients() {
-    
-    let auxList : Cliente[];
+
+    let auxList: Cliente[];
     auxList = [];
-    
+
     this.listClient = this.fireBase.list('cliente');
-    
+
     this.listClient.snapshotChanges()
-    .subscribe(item => {
-      item.forEach(element => {
-        let x = element.payload.toJSON();
-        x['$key'] = element.key;
-        auxList.push(x as Cliente);
+      .subscribe(item => {
+        item.forEach(element => {
+          let x = element.payload.toJSON();
+          x['$key'] = element.key;
+          auxList.push(x as Cliente);
+        });
       });
-    });
-    
-    return auxList ;
+
+    return auxList;
   }
 
   /**
@@ -52,29 +52,32 @@ export class ClienteService {
    * @param clientObject 
    * 
    */
-    insertClient(clientObject: Cliente) {
-    this.fireBase.list('cliente').set(clientObject.marca,{
+  insertClient(clientObject: Cliente) {
+    this.fireBase.list('cliente').set(clientObject.marca, {
       name: clientObject.name,
       email: clientObject.email,
       password: clientObject.password,
       marca: clientObject.marca,
-      creacion:clientObject.creacion,
-      hasta:clientObject.hasta,
+      creacion: clientObject.creacion,
+      hasta: clientObject.hasta,
       online: true,
+      fechaVerificacionAds: clientObject.fechaVerificacionAds,
+      statusAds: clientObject.statusAds,
+      fotoAds: clientObject.fotoAds,
       web: {
-        carrito:null,
-        anuncios:null,
-        product:null,
-        plataforma:"stand",
-        whatsapp:"",
-        instagram:"",
-        facebook:"",
+        carrito: null,
+        anuncios: null,
+        product: null,
+        plataforma: "stand",
+        whatsapp: "",
+        instagram: "",
+        facebook: "",
         view: 0
       }
     })
   }
 
-  updateClient(clientObject: WebCliente, data : WebCliente, $key : string) {
+  updateClient(clientObject: WebCliente, data: WebCliente, $key: string) {
     console.log(clientObject)
     this.listClient.update($key, {
       web: {
