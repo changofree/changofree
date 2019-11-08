@@ -97,4 +97,8 @@ export class ClienteService {
   generateSubdomain() {
     return this.http.get('https://changofree.com/assets/php/generate-domain.php');
   }
+  generateFile() {
+    return this.http.get('https://changofree.com/assets/php/copy_directory.php');
+  }
+  
 }
