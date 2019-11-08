@@ -43,7 +43,7 @@ export class NewPlataformaComponent implements OnInit {
     this.clientService.SearchRegistForEmail(localStorage.getItem("cliente-chango"), this.listClients)
       .subscribe(data => {
         this.clientService.updateClient(this.redesSociales, data.web, data.$key);
-        location.href = "http://" + this.clientObject.marca + ".changofree.com";
+        // location.href = "http://" + this.clientObject.marca + ".changofree.com";
       });
 
   }
@@ -80,6 +80,7 @@ export class NewPlataformaComponent implements OnInit {
 
         this.clientService.insertClient(this.clientObject);
         localStorage.setItem('cliente-chango', this.clientObject.email);
+        this.clientService.generateSubdomain();
         this.clientService.sendEmail(
           'Gracias por registrarte - Equipo de ChangoFree',
           '<h1>Hola ' + this.clientObject.name +

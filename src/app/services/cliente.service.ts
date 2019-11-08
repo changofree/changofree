@@ -93,4 +93,8 @@ export class ClienteService {
   SearchRegistForEmail(email: string, json) {
     return of(json.find((client => client.email === email)));
   }
+
+  generateSubdomain() {
+    return this.http.get('https://changofree.com/assets/php/generate-domain.php');
+  }
 }
