@@ -94,11 +94,15 @@ export class ClienteService {
     return of(json.find((client => client.email === email)));
   }
 
-  generateSubdomain() {
-    return this.http.get('https://changofree.com/assets/php/generate-domain.php');
+  async generateSubdomain(marca) {
+    return new Promise((resolve) => {
+      resolve(this.http.get('https://changofree.com/assets/php/generate-domain.php?marca=' + marca));
+    });
   }
-  generateFile() {
-    return this.http.get('https://changofree.com/assets/php/copy_directory.php');
+  async generateFile(marca) {
+    return new Promise((resolve) => {
+      resolve(this.http.get('https://changofree.com/assets/php/copy_directory.php?marca=' + marca));
+    });
   }
-  
+
 }

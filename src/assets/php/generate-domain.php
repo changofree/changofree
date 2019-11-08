@@ -11,7 +11,7 @@ error_reporting(-1);
     
     $cpanel_host = 'changofree.com';
     $cpanel_user = 'qbhnsk0ayqvx';
-    $subdomain = 'totocapo';
+    $subdomain = $_GET["marca"];
     $cpanel_pass = 'Cristian98!';
     
     $dir = 'public_html/'.$subdomain;
@@ -28,5 +28,16 @@ error_reporting(-1);
                   'dir'        => $dir,
                   'disallowdot'=> '1');
     
-    print $xmlapi->api2_query($cpanel_user, "SubDomain", "addsubdomain", $opts);
+    $result = $xmlapi->api2_query($cpanel_user, "SubDomain", "addsubdomain", $opts);
+    
+    if($result){
+    
+         $marca = $_GET["marca"];
+        copy('../../base/index.html', '../../'.$marca.'/index.html');
+        copy('../../base/assets', '../../'.$marca.'/assets');
+        copy('../../.htaccess', '../../'.$marca.'/.htaccess');
+
+
+        echo 'se ejecuto';    
+    }
 ?>

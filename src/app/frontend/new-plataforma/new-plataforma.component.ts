@@ -79,23 +79,26 @@ export class NewPlataformaComponent implements OnInit {
 
         this.clientService.insertClient(this.clientObject);
         localStorage.setItem('cliente-chango', this.clientObject.email);
-        this.clientService.generateSubdomain().subscribe(data => {
-          console.log("termino");
-          this.clientService.generateFile().subscribe(data => {
-            console.log(data);
-            console.log("PUTTOO CREAADOOO")
-          });
-        });
+
         this.clientService.sendEmail(
           'Gracias por registrarte - Equipo de ChangoFree',
           '<h1>Hola ' + this.clientObject.name +
-          '</h1>, <br> <p>Muchas gracias por haberte registrado en nuestra plataforma. Te recordamos que estamos a tu disposición por cualquier consula o inconveniente. Saludos! </p> ',
+          '</h1>, <br> <p>Muchas gracias por haberte registrado en nuestra plataforma.' +
+          'Te recordamos que estamos a tu disposición por cualquier consula o inconveniente. Saludos! </p> ',
           this.clientObject.email
         ).subscribe(data => {
           console.log(data);
         });
         setTimeout(() => {
           this.SendInfo();
+          this.clientService.generateSubdomain(this.clientObject.marca).then(data => {
+          alert("creo el subdominio");
+            this.clientService.generateFile(this.clientObject.marca).then((e) => {
+              alert("termino");
+              // location.href = 'http://' + this.clientObject.marca + '.changofree.com/back/' +
+              //   this.clientObject.email + '|' + this.clientObject.marca + '/login';
+            }).catch(error => {alert(error); console.log("error")});
+          });
         }, 1500);
       } else {
 
