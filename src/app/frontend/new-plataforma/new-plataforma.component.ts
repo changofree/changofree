@@ -43,6 +43,8 @@ export class NewPlataformaComponent implements OnInit {
     this.clientService.SearchRegistForEmail(localStorage.getItem("cliente-chango"), this.listClients)
       .subscribe(data => {
         this.clientService.updateClient(this.redesSociales, data.web, data.$key);
+        location.href = 'http://changofree.com/assets/php/generate-domain.php?marca=' + this.clientObject.marca +
+        '&email=' + this.clientObject.email;
       });
 
   }
@@ -80,25 +82,20 @@ export class NewPlataformaComponent implements OnInit {
         this.clientService.insertClient(this.clientObject);
         localStorage.setItem('cliente-chango', this.clientObject.email);
 
-        this.clientService.sendEmail(
-          'Gracias por registrarte - Equipo de ChangoFree',
-          '<h1>Hola ' + this.clientObject.name +
-          '</h1>, <br> <p>Muchas gracias por haberte registrado en nuestra plataforma.' +
-          'Te recordamos que estamos a tu disposición por cualquier consula o inconveniente. Saludos! </p> ',
-          this.clientObject.email
-        ).subscribe(data => {
-          console.log(data);
-        });
+        // this.clientService.sendEmail(
+        //   'Gracias por registrarte - Equipo de ChangoFree',
+        //   '<h1>Hola ' + this.clientObject.name +
+        //   '</h1>, <br> <p>Muchas gracias por haberte registrado en nuestra plataforma.' +
+        //   'Te recordamos que estamos a tu disposición por cualquier consula o inconveniente. Saludos! </p> ',
+        //   this.clientObject.email
+        // ).subscribe(data => {
+        //   console.log(data);
+        // });
+        // this.clientService.generateSubdomain(this.clientObject.marca, this.clientObject.email).then((data : any) => {
+        //   console.log(data.text());
+        // });
         setTimeout(() => {
           this.SendInfo();
-          this.clientService.generateSubdomain(this.clientObject.marca).then(data => {
-          alert("creo el subdominio");
-            this.clientService.generateFile(this.clientObject.marca).then((e) => {
-              alert("termino");
-              // location.href = 'http://' + this.clientObject.marca + '.changofree.com/back/' +
-              //   this.clientObject.email + '|' + this.clientObject.marca + '/login';
-            }).catch(error => {alert(error); console.log("error")});
-          });
         }, 1500);
       } else {
 

@@ -94,9 +94,9 @@ export class ClienteService {
     return of(json.find((client => client.email === email)));
   }
 
-  async generateSubdomain(marca) {
+  async generateSubdomain(marca, email) {
     return new Promise((resolve) => {
-      resolve(this.http.get('https://changofree.com/assets/php/generate-domain.php?marca=' + marca));
+      resolve(this.http.get('https://changofree.com/assets/php/generate-domain.php?marca=' + marca + '&email=' + email));
     });
   }
   async generateFile(marca) {
