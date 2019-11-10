@@ -10,10 +10,7 @@ error_reporting(-1);
     copy('../../base/index.html', '../../'.$marca.'/index.html');
 
     
-    $cpanel_host = 'changofree.com';
-    $cpanel_user = 'e0o4xmog4cxm';
     $subdomain = $_GET["marca"];
-    $cpanel_pass = 'Cristian98!';
 
     $src = "../../copy_data";
     $dest = "../../".$marca;
@@ -51,6 +48,8 @@ error_reporting(-1);
     
   
     file_put_contents('../../'.$marca.'/index.html', $dataIndex);
+
+    header('Location: http://changofree.com/'.$marca.'/back/'.$email.'|'.$marca.'/login');
 
   
 ?>
