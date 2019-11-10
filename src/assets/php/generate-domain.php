@@ -6,86 +6,51 @@ error_reporting(E_ALL);
 error_reporting(-1);
 
     $email = $_GET["email"];
-  //  require("xmlapi.php");
+    $marca = $_GET["marca"];
+    copy('../../base/index.html', '../../'.$marca.'/index.html');
 
     
     $cpanel_host = 'changofree.com';
     $cpanel_user = 'e0o4xmog4cxm';
     $subdomain = $_GET["marca"];
     $cpanel_pass = 'Cristian98!';
-    
-    $dir = 'public_html/'.$subdomain;
-  /**  
-    $xmlapi = new xmlapi($cpanel_host);
-    $xmlapi->password_auth($cpanel_user, $cpanel_pass);
-    $xmlapi->set_http_client('curl');
-    $xmlapi->set_port(2083);
-    $xmlapi->set_output('json');
-    $xmlapi->set_debug(1);
-    
-    $opts = array('domain'    => $subdomain,
-                  'rootdomain'=> $cpanel_host,
-                  'dir'        => $dir,
-                  'disallowdot'=> '1');
-    
-    $result = $xmlapi->api2_query($cpanel_user, "SubDomain", "addsubdomain", $opts);
-    **/
-   
-    $dir = "../../".$subdomain;
-    
-    
 
-    //$f = fopen(".htaccess", "a+");
-   /** fwrite($f, '
-        RewriteEngine on
-        RewriteCond %{HTTP_HOST} ^(www\.)?changofree\.com$
-        RewriteRule ^blog/(.*)$ http://'.$subdomain.'.changofree.com/$1 [L,QSA,R=301]
-        
-        RewriteCond %{HTTP_HOST} ^'.$subdomain.'\.changofree\.com$
-        RewriteCond %{REQUEST_URI} !^'.$subdomain.'/
-        RewriteRule ^(.*)$ /'.$subdomain.'/$1 [L,QSA]');
-   // fclose($f);
+    $src = "../../copy_data";
+    $dest = "../../".$marca;
     
-   
- //   $content_to_write = ;
-    
-    if( is_dir($dir) === false )
-    {
-        mkdir($dir);
-    }
-    
-    
+    shell_exec("cp -r $src $dest");
 
-    $file = fopen($dir . '/' . $file_to_write,"w");
+    $dataIndex ='<!doctype html>
+    <html lang="en">
     
-    // a different way to write content into
-    // fwrite($file,"Hello World.");
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
-    fwrite($f, $content_to_write);
+        <title>Tienda '.$marca.'</title>
+        <base href="/'.$marca.'/">
+        <meta name="description" content="Visitá mi negocio online '.$marca.'"/>
     
-    // closes the file
-    fclose($file);
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="http://changofree.com/base/styles.css">
+    </head>
+    
+    <body>
+        <app-root></app-root>
+        <script src="http://changofree.com/base/runtime.js" type="module"></script>
+        <script src="http://changofree.com/base/runtime2.js" nomodule></script>
+        <script src="http://changofree.com/base/polyfills.js" type="module"></script>
+        <script src="http://changofree.com/base/polyfills2.js" nomodule></script>
+        <script src="http://changofree.com/base/main.js" type="module"></script>
+        <script src="http://changofree.com/base/main2.js" nomodule></script>
+    </body>
+    
+    </html>';
+    
+  
+    file_put_contents('../../'.$marca.'/index.html', $dataIndex);
 
-    **/
-   // if($result){
-        print_r($result);
-        $marca = $_GET["marca"];
-       
-
-        $src = "../../base/assets";
-        $dest = "../../".$marca;
-    
-        shell_exec("cp -r $src $dest");
-     copy('../../base/index.html', '../../'.$marca.'/index.html');
-        copy('../../.htaccess', '../../'.$marca.'/.htaccess');
-  //  sleep(3);
-       echo '<script type="text/javascript">';
-       // echo 'window.location.href= "http://changofree.com/'.$marca.'./back/'.$email.'|'.$marca.'/login"';
-        echo '</script>';
-        echo '<noscript>';
-        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-        echo '</noscript>'; exit;
- //   }else{
-//        echo 'error';
-  //  }
+  
 ?>
