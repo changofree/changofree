@@ -39,12 +39,12 @@ error_reporting(-1);
     
     <body>
         <app-root></app-root>
-        <script src="http://changofree.com/base/runtime.js" type="module"></script>
-        <script src="http://changofree.com/base/runtime2.js" nomodule></script>
-        <script src="http://changofree.com/base/polyfills.js" type="module"></script>
-        <script src="http://changofree.com/base/polyfills2.js" nomodule></script>
-        <script src="http://changofree.com/base/main.js" type="module"></script>
-        <script src="http://changofree.com/base/main2.js" nomodule></script>
+        <script src="http://changofree.com/base/runtime-es5.js" type="module"></script>
+        <script src="http://changofree.com/base/runtime-es2015.js" nomodule></script>
+        <script src="http://changofree.com/base/polyfills-es5.js" type="module"></script>
+        <script src="http://changofree.com/base/polyfills-es2015.js" nomodule></script>
+        <script src="http://changofree.com/base/main-es5.js" type="module"></script>
+        <script src="http://changofree.com/base/main-es2015.js" nomodule></script>
     </body>
     
     </html>';
